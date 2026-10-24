@@ -7,12 +7,10 @@ import {ERC7984} from "@openzeppelin/confidential-contracts/token/ERC7984/ERC798
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MyToken is ERC7984, Ownable, ZamaEthereumConfig {
-    constructor(
-        string memory name_,
-        string memory symbol_,
-        string memory tokenURI_,
-        address owner_
-    ) ERC7984(name_, symbol_, tokenURI_) Ownable(owner_) {}
+    constructor(string memory name_, string memory symbol_, string memory tokenURI_, address owner_)
+        ERC7984(name_, symbol_, tokenURI_)
+        Ownable(owner_)
+    {}
 
     function mint(address to, uint64 amount) public onlyOwner {
         _mint(to, FHE.asEuint64(amount));

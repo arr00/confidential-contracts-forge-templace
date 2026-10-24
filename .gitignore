@@ -2,6 +2,9 @@
 cache/
 out/
 
+# Soldeer
+/dependencies
+
 # Commonly ignored directories
 .logs/
 .ignore/
